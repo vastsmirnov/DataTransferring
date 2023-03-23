@@ -1,5 +1,6 @@
 package com.example.datatransferring
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -30,7 +31,7 @@ class FirstFragment : Fragment() {
 
     private lateinit var binding: FragmentFirstBinding
     private val text: String? by lazy { requireArguments().getString(KEY_STRING) }
-    private val textDto: TextDto? by lazy { requireArguments().get(KEY_OBJECT) as TextDto?}
+    private val textDto: TextDto? by lazy { requireArguments().get(KEY_OBJECT) as TextDto? }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -49,10 +50,51 @@ class FirstFragment : Fragment() {
             }
 
             if (textDto !== null) {
-                objectTv.text = textDto!!.text
+                objectTv.text = textDto!!.toString()
             }
+
+            stringFAMb.setOnClickListener(::stringFragmentToActivity)
+            objectFAMb.setOnClickListener(::objectFragmentToActivity)
+            stringFFMb.setOnClickListener(::stringFragmentToFragment)
+            objectFFMb.setOnClickListener(::objectFragmentToFragment)
         }
 
         return binding.root
+    }
+
+    private fun objectFragmentToFragment(view: View?) {
+        val text = binding.textEt.text
+        parentFragmentManager.beginTransaction()
+            .replace(
+                R.id.fragment_container,
+                SecondFragment.newInstance(TextDto(text.toString()))
+            )
+            .addToBackStack(null)
+            .commit()
+    }
+
+    private fun stringFragmentToFragment(view: View?) {
+        val text = binding.textEt.text
+        parentFragmentManager.beginTransaction()
+            .replace(
+                R.id.fragment_container,
+                SecondFragment.newInstance(text.toString())
+            )
+            .addToBackStack(null)
+            .commit()
+    }
+
+    private fun objectFragmentToActivity(view: View?) {
+        val text = binding.textEt.text
+        val intent = Intent(context, FirstActivity::class.java)
+        intent.putExtra(FirstActivity.KEY_OBJECT, TextDto(text.toString()))
+        startActivity(intent)
+    }
+
+    private fun stringFragmentToActivity(view: View?) {
+        val text = binding.textEt.text
+        val intent = Intent(context, FirstActivity::class.java)
+        intent.putExtra(FragmentActivity.KEY_STRING, text.toString())
+        startActivity(intent)
     }
 }

@@ -1,14 +1,21 @@
 <resources>
     <string name="app_name">DataTransferring</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="string_a_a_mb_text">Передача строки в Активити 2</string>
-    <string name="object_a_a_mb_text">Передача объекта в Активити 2</string>
-    <string name="string_a_f_mb_text">Передача строки в Фрагмент 1</string>
-    <string name="object_a_f_mb_text">Передача объекта в Фрагмент 1</string>
-    <string name="first_activity_text">Активити 1</string>
-    <string name="first_fragment_text">Фрагмент 1</string>
+    <string name="string_a_a_mb_text">Строка в А2</string>
+    <string name="object_a_a_mb_text">Объект в А2</string>
+    <string name="string_a_f_mb_text">Строка в Ф1</string>
+    <string name="object_a_f_mb_text">Объект в Ф1</string>
+    <string name="first_activity_text">Активити 1 (А1)</string>
+    <string name="first_fragment_text">Фрагмент 1 (Ф2)</string>
     <string name="string_tv">String:</string>
     <string name="object_tv">Object:</string>
-    <string name="second_activity_text">second_activity_text</string>
+    <string name="second_activity_text">Активити 2 (А2)</string>
     <string name="text_et_hint">Введите текст</string>
+    <string name="second_fragment_text">Фрагмент 2 (Ф2)</string>
+    <string name="text_et_a1_default_value">Тест А1</string>
+    <string name="string_f_a_mb_text">Строка в А1</string>
+    <string name="object_f_a_mb_text">Объект в А1</string>
+    <string name="string_f_f_mb_text">Строка в Ф2</string>
+    <string name="object_f_f_mb_text">Объект в Ф2</string>
+    <string name="text_et_f1_default_text">Тест Ф1</string>
 </resources>

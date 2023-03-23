@@ -18,12 +18,13 @@ class SecondActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivitySecondBinding.inflate(layoutInflater)
 
-        val string: String? = intent.getStringExtra(KEY_STRING)
+        val text: String? = intent.getStringExtra(KEY_STRING)
         val textDto: TextDto? = intent?.extras?.get(KEY_OBJECT) as TextDto?
         with(binding) {
-            stringTv.text = string
-            objectTv.text = textDto?.text ?: ""
+            stringTv.text = text
+            objectTv.text = textDto?.toString() ?: ""
         }
+
         setContentView(binding.root)
     }
 }
