@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">DataTransferring</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="string_a_a_mb_text">Передача строки в Активити 2</string>
+    <string name="object_a_a_mb_text">Передача объекта в Активити 2</string>
+    <string name="string_a_f_mb_text">Передача строки в Фрагмент 1</string>
+    <string name="object_a_f_mb_text">Передача объекта в Фрагмент 1</string>
+    <string name="first_activity_text">Активити 1</string>
+    <string name="first_fragment_text">Фрагмент 1</string>
+    <string name="string_tv">String:</string>
+    <string name="object_tv">Object:</string>
+    <string name="second_activity_text">second_activity_text</string>
+    <string name="text_et_hint">Введите текст</string>
 </resources>

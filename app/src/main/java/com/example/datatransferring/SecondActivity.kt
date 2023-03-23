@@ -12,7 +12,7 @@ class SecondActivity : AppCompatActivity() {
         const val KEY_OBJECT = "KEY_OBJECT"
     }
 
-    lateinit var binding: ActivitySecondBinding
+    private lateinit var binding: ActivitySecondBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
