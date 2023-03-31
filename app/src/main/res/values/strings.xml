@@ -6,7 +6,7 @@
     <string name="string_a_f_mb_text">Строка в Ф1</string>
     <string name="object_a_f_mb_text">Объект в Ф1</string>
     <string name="first_activity_text">Активити 1 (А1)</string>
-    <string name="first_fragment_text">Фрагмент 1 (Ф2)</string>
+    <string name="first_fragment_text">Фрагмент 1 (Ф1)</string>
     <string name="string_tv">String:</string>
     <string name="object_tv">Object:</string>
     <string name="second_activity_text">Активити 2 (А2)</string>

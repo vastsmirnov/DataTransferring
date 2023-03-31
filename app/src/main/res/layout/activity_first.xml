@@ -146,13 +146,13 @@
             </com.google.android.material.card.MaterialCardView>
 
             <androidx.fragment.app.FragmentContainerView
-                android:id="@+id/fragment_container"
+                android:id="@+id/third_fragment_container"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingVertical="5dp" />
 
             <androidx.fragment.app.FragmentContainerView
-                android:id="@+id/second_fragment_container"
+                android:id="@+id/fourth_fragment_container"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingVertical="5dp" />

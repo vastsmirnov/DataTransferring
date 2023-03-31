@@ -1,5 +1,6 @@
 package com.example.datatransferring
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
@@ -14,6 +15,19 @@ class FirstActivity : AppCompatActivity() {
     companion object {
         const val KEY_STRING = "KEY_STRING"
         const val KEY_OBJECT = "KEY_OBJECT"
+
+        fun newIntent(context: Context, text: String): Intent {
+            val intent = Intent(context, FirstActivity::class.java)
+            intent.putExtra(KEY_STRING, text)
+
+            return intent
+        }
+
+        fun newIntent(context: Context, textDto: TextDto): Intent {
+            val intent = Intent(context, FirstActivity::class.java)
+            intent.putExtra(KEY_OBJECT, textDto)
+            return intent
+        }
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -39,31 +53,43 @@ class FirstActivity : AppCompatActivity() {
     private fun objectActivityToFragment(view: View?) {
         hideKeyboard(view)
         val text = binding.textEt.text
-        val intent = Intent(this, FragmentActivity::class.java)
-        intent.putExtra(FragmentActivity.KEY_OBJECT, TextDto(text.toString()))
-        startActivity(intent)
+        startActivity(
+            FragmentActivity.newIntent(
+                context = applicationContext,
+                textDto = TextDto(text.toString())
+            )
+        )
     }
 
     private fun stringActivityToFragment(view: View?) {
         hideKeyboard(view)
         val text = binding.textEt.text
-        val intent = Intent(this, FragmentActivity::class.java)
-        intent.putExtra(FragmentActivity.KEY_STRING, text.toString())
-        startActivity(intent)
+        startActivity(
+            FragmentActivity.newIntent(
+                context = applicationContext,
+                text = text.toString()
+            )
+        )
     }
 
     private fun objectActivityToActivity(view: View?) {
         val text = binding.textEt.text
-        val intent = Intent(this, SecondActivity::class.java)
-        intent.putExtra(SecondActivity.KEY_OBJECT, TextDto(text.toString()))
-        startActivity(intent)
+        startActivity(
+            SecondActivity.newIntent(
+                context = applicationContext,
+                textDto = TextDto(text.toString())
+            )
+        )
     }
 
     private fun stringActivityToActivity(view: View?) {
         val text = binding.textEt.text
-        val intent = Intent(this, SecondActivity::class.java)
-        intent.putExtra(SecondActivity.KEY_STRING, text.toString())
-        startActivity(intent)
+        startActivity(
+            SecondActivity.newIntent(
+                context = applicationContext,
+                text = text.toString()
+            )
+        )
     }
 
     private fun hideKeyboard(view: View?) {

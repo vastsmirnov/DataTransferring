@@ -9,7 +9,7 @@
     tools:context=".FragmentActivity">
 
     <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/fragment_container"
+        android:id="@+id/third_fragment_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:paddingVertical="5dp" />

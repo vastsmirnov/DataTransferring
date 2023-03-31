@@ -1,6 +1,5 @@
 package com.example.datatransferring
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -66,7 +65,7 @@ class FirstFragment : Fragment() {
         val text = binding.textEt.text
         parentFragmentManager.beginTransaction()
             .replace(
-                R.id.fragment_container,
+                R.id.third_fragment_container,
                 SecondFragment.newInstance(TextDto(text.toString()))
             )
             .addToBackStack(null)
@@ -77,7 +76,7 @@ class FirstFragment : Fragment() {
         val text = binding.textEt.text
         parentFragmentManager.beginTransaction()
             .replace(
-                R.id.fragment_container,
+                R.id.third_fragment_container,
                 SecondFragment.newInstance(text.toString())
             )
             .addToBackStack(null)
@@ -86,15 +85,21 @@ class FirstFragment : Fragment() {
 
     private fun objectFragmentToActivity(view: View?) {
         val text = binding.textEt.text
-        val intent = Intent(context, FirstActivity::class.java)
-        intent.putExtra(FirstActivity.KEY_OBJECT, TextDto(text.toString()))
-        startActivity(intent)
+        startActivity(
+            FirstActivity.newIntent(
+                context = requireContext(),
+                textDto = TextDto(text.toString())
+            )
+        )
     }
 
     private fun stringFragmentToActivity(view: View?) {
         val text = binding.textEt.text
-        val intent = Intent(context, FirstActivity::class.java)
-        intent.putExtra(FragmentActivity.KEY_STRING, text.toString())
-        startActivity(intent)
+        startActivity(
+            FirstActivity.newIntent(
+                context = requireContext(),
+                text = text.toString()
+            )
+        )
     }
 }
