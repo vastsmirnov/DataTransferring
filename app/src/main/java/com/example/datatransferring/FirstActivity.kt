@@ -8,9 +8,12 @@ import android.view.inputmethod.InputMethodManager
 import androidx.appcompat.app.AppCompatActivity
 import com.example.datatransferring.databinding.ActivityFirstBinding
 import com.example.datatransferring.dto.TextDto
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class FirstActivity : AppCompatActivity() {
     private lateinit var binding: ActivityFirstBinding
+
+    private val viewModel by viewModel<TextViewModel>()
 
     companion object {
         const val KEY_STRING = "KEY_STRING"
@@ -60,6 +63,10 @@ class FirstActivity : AppCompatActivity() {
                 FourthFragment.newInstance()
             )
             .commit()
+
+        viewModel.textLiveData.observe(this) {
+            binding.stringTv.text = it
+        }
 
         setContentView(binding.root)
     }

@@ -23,4 +23,5 @@
     <string name="fourth_fragment_text">Фрагмент 4 (Ф4)</string>
     <string name="text_et_f4_default_text">Тест Ф4</string>
     <string name="text_et_f3_default_text">Тест Ф3</string>
+    <string name="string_f_a_shared_vm_mb">Строка из Ф3 в А1 (SharedVM)</string>
 </resources>
