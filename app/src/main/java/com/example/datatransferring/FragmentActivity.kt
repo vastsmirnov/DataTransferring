@@ -39,7 +39,7 @@ class FragmentActivity : AppCompatActivity() {
         if (text!== null) {
             supportFragmentManager.beginTransaction()
                 .replace(
-                    R.id.third_fragment_container,
+                    R.id.fragment_container,
                     FirstFragment.newInstance(text.toString())
                 )
                 .commit()
@@ -48,7 +48,7 @@ class FragmentActivity : AppCompatActivity() {
         if (textDto !== null) {
             supportFragmentManager.beginTransaction()
                 .replace(
-                    R.id.third_fragment_container,
+                    R.id.fragment_container,
                     FirstFragment.newInstance(textDto)
                 )
                 .commit()

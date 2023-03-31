@@ -18,4 +18,9 @@
     <string name="string_f_f_mb_text">Строка в Ф2</string>
     <string name="object_f_f_mb_text">Объект в Ф2</string>
     <string name="text_et_f1_default_text">Тест Ф1</string>
+    <string name="third_fragment_text">Фрагмент 3 (Ф3)</string>
+    <string name="text_et_f2_default_text">Тест Ф2</string>
+    <string name="fourth_fragment_text">Фрагмент 4 (Ф4)</string>
+    <string name="text_et_f4_default_text">Тест Ф4</string>
+    <string name="text_et_f3_default_text">Тест Ф3</string>
 </resources>

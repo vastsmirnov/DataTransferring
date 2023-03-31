@@ -47,6 +47,20 @@ class FirstActivity : AppCompatActivity() {
             objectTv.text = textDto?.toString() ?: ""
         }
 
+        supportFragmentManager.beginTransaction()
+            .replace(
+                R.id.third_fragment_container,
+                ThirdFragment.newInstance()
+            )
+            .commit()
+
+        supportFragmentManager.beginTransaction()
+            .replace(
+                R.id.fourth_fragment_container,
+                FourthFragment.newInstance()
+            )
+            .commit()
+
         setContentView(binding.root)
     }
 

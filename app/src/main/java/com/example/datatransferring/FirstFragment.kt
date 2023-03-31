@@ -65,7 +65,7 @@ class FirstFragment : Fragment() {
         val text = binding.textEt.text
         parentFragmentManager.beginTransaction()
             .replace(
-                R.id.third_fragment_container,
+                R.id.fragment_container,
                 SecondFragment.newInstance(TextDto(text.toString()))
             )
             .addToBackStack(null)
@@ -76,7 +76,7 @@ class FirstFragment : Fragment() {
         val text = binding.textEt.text
         parentFragmentManager.beginTransaction()
             .replace(
-                R.id.third_fragment_container,
+                R.id.fragment_container,
                 SecondFragment.newInstance(text.toString())
             )
             .addToBackStack(null)
