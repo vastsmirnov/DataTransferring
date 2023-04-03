@@ -10,7 +10,7 @@ import com.example.datatransferring.databinding.ActivityFirstBinding
 import com.example.datatransferring.dto.TextDto
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class FirstActivity : AppCompatActivity() {
+class FirstActivity : AppCompatActivity(), Listener {
     private lateinit var binding: ActivityFirstBinding
 
     private val viewModel by viewModel<TextViewModel>()
@@ -60,7 +60,8 @@ class FirstActivity : AppCompatActivity() {
         supportFragmentManager.beginTransaction()
             .replace(
                 R.id.fourth_fragment_container,
-                FourthFragment.newInstance()
+                FourthFragment.newInstance(),
+                FourthFragment.tag
             )
             .commit()
 
@@ -119,5 +120,12 @@ class FirstActivity : AppCompatActivity() {
         val inputMethodManager: InputMethodManager =
             getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
         inputMethodManager.hideSoftInputFromWindow(view.applicationWindowToken, 0)
+    }
+
+    override fun sendData(text: String) {
+        val fragment = supportFragmentManager.findFragmentByTag(FourthFragment.tag)
+        if (fragment is FourthFragment) {
+            fragment.setText(text)
+        }
     }
 }

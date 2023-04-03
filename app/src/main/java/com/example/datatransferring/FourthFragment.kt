@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.setFragmentResult
 import com.example.datatransferring.databinding.FragmentFourthBinding
 
 class FourthFragment : Fragment() {
@@ -20,10 +21,24 @@ class FourthFragment : Fragment() {
             false
         )
 
+        binding.stringFFMb.setOnClickListener {
+            val text = binding.textEt.text
+            setFragmentResult(
+                ThirdFragment.KEY_FRAGMENT_3_REQUEST,
+                ThirdFragment.newBundle(text.toString())
+            )
+        }
+
         return binding.root
     }
 
+    fun setText(text: String) {
+        binding.stringTv.text = text
+    }
+
     companion object {
+        val tag = FourthFragment::class.java.simpleName
+
         fun newInstance() = FourthFragment()
     }
 }
